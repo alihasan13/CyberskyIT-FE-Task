@@ -1,6 +1,15 @@
 import React from 'react';
+import SocialLinks from './SocialLinks';
+import Rating from './Rating';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import avocadoPhoto1 from '../assets/avocadopic1.jpg'
+import avocadoPhoto2 from '../assets/avocado23.jpg'
+
 
 const BlogCard = () => {
+
+
   return (
     <div className="max-w-lg mx-auto p-4 bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
       {/* Title */}
@@ -16,9 +25,11 @@ const BlogCard = () => {
 
       {/* Paragraph with Image */}
       <div className="mb-4">
-        <img
-          src="https://via.placeholder.com/300x200"
-          alt="Avocado"
+
+        <LazyLoadImage
+          src={avocadoPhoto1}
+          alt="Avocado on a plate"
+          effect="blur"
           className="rounded-lg w-full object-cover mb-2"
         />
         <p className="text-gray-600">
@@ -28,12 +39,15 @@ const BlogCard = () => {
 
       {/* Two Paragraphs with Image */}
       <div className="mb-4">
+        <h2 className="text-xl font-semibold text-gray-700">Avocados Are Good for Health</h2>
         <p className="text-gray-600 mb-2">
           Besides their culinary uses, avocados promote heart health and aid in weight management. They're also rich in antioxidants that combat free radicals.
         </p>
-        <img
-          src="https://via.placeholder.com/300x200"
+
+        <LazyLoadImage
+          src={avocadoPhoto2}
           alt="Avocado on a plate"
+          effect="blur"
           className="rounded-lg w-full object-cover mb-2"
         />
         <p className="text-gray-600">
@@ -42,38 +56,11 @@ const BlogCard = () => {
       </div>
 
       {/* Rating Stars */}
-      <div className="flex items-center justify-center my-4">
-        <span className="text-yellow-400 text-xl mr-1">★</span>
-        <span className="text-yellow-400 text-xl mr-1">★</span>
-        <span className="text-yellow-400 text-xl mr-1">★</span>
-        <span className="text-yellow-400 text-xl mr-1">★</span>
-        <span className="text-gray-300 text-xl">★</span>
-      </div>
+
+      <Rating />
 
       {/* Social Links */}
-      <div className="flex justify-center space-x-4 mt-4">
-        <a
-          href="#"
-          className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
-          aria-label="Facebook"
-        >
-          Facebook
-        </a>
-        <a
-          href="#"
-          className="text-blue-400 hover:text-blue-600 transition-colors duration-200"
-          aria-label="Twitter"
-        >
-          Twitter
-        </a>
-        <a
-          href="#"
-          className="text-pink-500 hover:text-pink-700 transition-colors duration-200"
-          aria-label="Instagram"
-        >
-          Instagram
-        </a>
-      </div>
+      <SocialLinks />
     </div>
   );
 };

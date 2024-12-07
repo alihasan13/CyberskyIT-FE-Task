@@ -6,7 +6,7 @@ const BlogPage = () => {
     <div className="bg-gray-100 min-h-screen py-8">
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <BlogCard />
-       
+
       </div>
     </div>
   );
